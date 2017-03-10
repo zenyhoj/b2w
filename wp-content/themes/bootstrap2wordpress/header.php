@@ -16,34 +16,70 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
+<!--Bootstrap core css-->
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/bootstrap.min.css">
+
+
+    <!--favicon-->
+<link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/favicon.ico">
+    <!--font-awesome icons-->
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/font-awesome/css/font-awesome.min.css">
+    <!--Google fonts -->
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" type="text/css">
+    <!--<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">-->
+
+
+
+
 <?php wp_head(); ?>
+<!--[if lt IE 7]>
+           <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bootstrap2wordpress' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+	<!--CONVERTING STATIC HEADER TO DYNAMIC-->
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
+ <header class="site-header" role="banner">
+        <!-- NAVBAR 
+        =============================================-->
+        <div class="navbar-wrapper">
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-container1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        <a class="navbar-brand" href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/b2w.png" alt="b2w logo"></a>
+                    </div>
+                    <!--navbar-header-->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'bootstrap2wordpress' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+					<!--creating the dynamic header using wp_nav_menu-->
+					<?php
+						wp_nav_menu( array(
+							'theme_location'	=> 'primary',
+							'container'			=>	'nav',
+							'container_class'	=>	'navbar-collapse collapse',
+							'menu_class'		=>	'nav navbar-nav navbar-right'
+						));
+					
+					?>
+                   
+                </div>
+                <!--container-->
+            </nav>
+            <!--navbar-->
 
-	<div id="content" class="site-content">
+        </div>
+        <!--navbar-wrapper-->
+    </header>
+
+
+	
