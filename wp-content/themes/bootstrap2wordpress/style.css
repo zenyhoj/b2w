@@ -361,10 +361,6 @@ object {
 	display: block;
 }
 
-/*--------------------------------------------------------------
-# Bootstrap to Wordpress Custom CSS
---------------------------------------------------------------*/
-
 /*
 Color References
 Green: #79b044
@@ -379,10 +375,9 @@ body{
     margin-top: 50px; 
     font-family: 'Raleway', Helvetica, sans-serif;
     font-size: 16px;
-    background: url('/wp-content/themes/bootstrap2wordpress/assets/img/tile.jpg') top left repeat;
-    /*background-size: cover;
-    background-position: center; */
-}
+    /*background: url('/wp-content/themes/bootstrap2wordpress/assets/img/tile.jpg') top left repeat;*/
+    background: url('../bootstrap2wordpress/assets/img/tile.jpg') top left repeat;
+  }
 
 .logged-in .navbar-fixed-top {
     top: 32px;
@@ -520,7 +515,8 @@ blockquote:before { /*to fix default left margin for first word*/
 /*End of Global*/
 
 #hero{
-    background: url('/wp-content/themes/bootstrap2wordpress/assets/img/hero-bg.jpg') 50% 0 repeat fixed;
+    /*background: url('/wp-content/themes/bootstrap2wordpress/assets/img/hero-bg.jpg') 50% 0 repeat fixed;*/
+    background: url('../bootstrap2wordpress/assets/img/hero-bg.jpg') 50% 0 repeat fixed;
     min-height: 500px;
     padding: 40px 0;
     color: white;
@@ -637,12 +633,13 @@ section.main-content {
 
 
 .feature-image-default {
-    background: url('/wp-content/themes/bootstrap2wordpress/assets/img/stuff-feature.jpg') no-repeat;
+    background: url('../bootstrap2wordpress/assets/img/stuff-feature.jpg') no-repeat;
+    
     background-size: cover;
 }
 
 .feature-image-default-alt {
-    background: url('/wp-content/themes/bootstrap2wordpress/assets/img/hipster-stuff.jpg') no-repeat;
+    background: url('../bootstrap2wordpress/assets/img/hipster-stuff.jpg') no-repeat;
     background-size: cover;
 }
 
@@ -690,7 +687,7 @@ section.main-content {
 
 /*featurette section*/
 #featurette{
-    background: url('/wp-content/themes/bootstrap2wordpress/assets/img/stuff-bg.jpg') 50% 100% repeat fixed;
+    background: url('../bootstrap2wordpress/assets/img/stuff-bg.jpg') 50% 100% repeat fixed;
     background-size: cover; /*resized the image as the viewport changes*/
     text-align: center;
     color: white;
@@ -699,7 +696,7 @@ section.main-content {
 /*Instructor section*/
 #instructor{
                                             /*90% horizontal position, -10px top */
-    background: url('/wp-content/themes/bootstrap2wordpress/assets/img/brad-elvis.png') 90% -10px no-repeat;
+    background: url('../bootstrap2wordpress/assets/img/brad-elvis.png') 90% -10px no-repeat;
 }
 
 #instructor h2 {
@@ -759,7 +756,7 @@ i.ci{
     display: inline-block;
     height: 40px;
     width: 40px;
-    background: url('/wp-content/themes/bootstrap2wordpress/assets/img/icon-sprite.png') no-repeat;
+    background: url('../bootstrap2wordpress/assets/img/icon-sprite.png') no-repeat;
 
 }
 
@@ -839,7 +836,7 @@ button[type="submit"]:hover {
 /*==========Signup Section===========*/
 #signup {
 
-    background: url('/wp-content/themes/bootstrap2wordpress/assets/img/hipster-stuff.jpg') center center repeat fixed; 
+    background: url('../bootstrap2wordpress/assets/img/hipster-stuff.jpg') center center repeat fixed; 
     background-size: cover;
     text-align: center;
     color: white;
@@ -1071,13 +1068,6 @@ footer li.signup-link a:hover {
 }
 
 
-/*Fix the top margin when logged in*/
-@media screen and (max-width: 782px){
-    .logged-in .navbar-fixed-top {
-        top: 46px;
-
-    }
-}
 
 /*====================== MEDIA QUERIES =====================*/
 
@@ -1111,14 +1101,6 @@ footer li.signup-link a:hover {
         margin-right: 2%;
         /*min-height: 800px;*/
     }
-}
-
-
-@media screen and (max-width : 600px) {
-    .logged-in .navbar-fixed-top {
-        top: 42px;
-    }
-
 }
 
 /*iphone 5 & up*/
