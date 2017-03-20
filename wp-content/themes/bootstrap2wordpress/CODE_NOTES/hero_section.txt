@@ -1,0 +1,1 @@
+Coding the hero section in page-home.php

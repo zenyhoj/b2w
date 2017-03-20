@@ -2,6 +2,18 @@
 /*
 Template Name: Home Page
 */ 
+
+//Custom Fields
+
+$prelaunch_price        =   get_post_meta(7, 'prelaunch_price', true);
+$launch_price           =   get_post_meta(7, 'launch_price', true);
+$final_price            =   get_post_meta(7, 'final_price', true);
+$course_url             =   get_post_meta(7, 'course_url', true);
+$button_text            =   get_post_meta(7, 'button_text', true);
+$opt_in                 =   get_post_meta(7, 'opt_in', true);
+$optin_button_text      =   get_post_meta(7, 'optin_button_text', true);
+
+
 get_header(); ?>
 
  <!-- HERO 
@@ -15,25 +27,29 @@ get_header(); ?>
                         <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo-badge.png" alt="b2w logo" class="logo">
                     </div>
                     <div class="col-sm-7 hero-text">
-                        <h1>Bootstrap to Wordpress</h1>
-                        <p class="lead">Earn An Extra $1K - $5k by Learning to Code Your Very Own Responsive Website &amp; Custom Website
-                            with Bootstrap
+                        
+                        <!--dynamic title name and h1-->
+                        <h1><?php bloginfo('name'); ?></h1>
+                        <!--end here-->
+
+                        <p class="lead"><?php bloginfo('description'); ?>
                         </p>
                         <div id="price-timeline">
                             <div class="price active">
                                 <h4>Pre-Launch Price <small>Ends Soon!</small></h4>
-                                <span>$149</span>
+                                <span><?php echo $prelaunch_price;?></span>
                             </div>
                             <div class="price">
                                 <h4>Launch Price <small>Coming Soon!</small></h4>
-                                <span>$299</span>
+                                <span><?php echo $launch_price; ?></span>
                             </div>
                             <div class="price">
                                 <h4>Final Price <small>Coming Soon!</small></h4>
-                                <span>$399</span>
+                                <span><?php echo $final_price; ?></span>
                             </div>
                         </div>
-                        <p><a href="#" class="btn btn-lg btn-danger" data-toggle="modal" data-target="#myModal" role="button">Enroll &raquo;</a></p>
+                        <!--<p><a class="btn btn-lg btn-danger" href="<?php echo $course_url; ?>" role="button"><?php echo $button_text; ?></a></p>-->
+                        <p><a class="btn btn-lg btn-danger" href="<?php echo $course_url; ?>" target = "_blank" role="button"><?php echo $button_text; ?></a></p>
                     </div>
                 </div>
             </div>
@@ -45,12 +61,12 @@ get_header(); ?>
         <div class="container">
             <div class="row">
                 <div class="col-sm-8">
-                    <p class="lead"><strong>Subscribe to our Mailing List. </strong> We'll something special as a thank you.</p>
+                    <p class="lead"><?php echo $opt_in; ?></p>
                 </div>
 
                 <div class="col-sm-4">
                     <button class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal">
-                        Click here to Subscribe!
+                        <?php echo $optin_button_text; ?>
                     </button>
                 </div>
             </div>
@@ -419,6 +435,26 @@ get_header(); ?>
             </div>
         </div>
     </section>
+
+    <!-- Signup 
+        =============================================-->
+    <section id="signup" data-type="background" data-speed="4">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <h2>
+                        Are you ready to take your coding skills to the <strong>next level</strong>?
+                    </h2>
+                    
+                    <p><a href="#" class="btn btn-lg btn-block btn-success">Yes, sign me up!</a></p>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    
 
 
 

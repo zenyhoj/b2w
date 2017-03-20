@@ -1080,6 +1080,14 @@ footer li.signup-link a:hover {
     }
 
 }
+
+/*Fixed the top margin when logged-in*/
+@media screen and(max-width : 782px) {
+    .logged-in .navbar-fixed-top {
+        top: 46px;
+    }
+}
+
 /*tabs*/
 @media screen and (max-width : 768px) {
     .logo {
@@ -1101,6 +1109,15 @@ footer li.signup-link a:hover {
         margin-right: 2%;
         /*min-height: 800px;*/
     }
+}
+
+/*Fixed the top margin when logged-in*/
+@media screen and (max-width : 600px){
+
+.logged-in .navbar-fixed-top {
+    top: 42px;
+}
+
 }
 
 /*iphone 5 & up*/
