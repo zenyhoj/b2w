@@ -13,8 +13,10 @@ $button_text            =   get_post_meta(7, 'button_text', true);
 $opt_in                 =   get_post_meta(7, 'opt_in', true);
 $optin_button_text      =   get_post_meta(7, 'optin_button_text', true);
 
-//Using Advanced Custom Fields Plugin
-//Boost Your Income Section
+/*
+Using Advanced Custom Fields Plugin for
+Boost Your Income Section
+*/
 $income_feature_image   =   get_field('income_feature_image');
 $income_section_title   =   get_field('income_section_title');
 $income_section_desc    =   get_field('income_section_description');
@@ -22,6 +24,13 @@ $reason_1_title         =   get_field('reason_1_title');
 $reason_1_desc          =   get_field('reason_1_description');
 $reason_2_title         =   get_field('reason_2_title');
 $reason_2_desc          =   get_field('reason_2_description');
+
+//Who Should Take This Course Section
+$who_feature_image   =   get_field('who_feature_image');
+$who_section_title   =   get_field('who_section_title');
+$who_section_body    =   get_field('who_section_body');
+
+
 
 
 get_header(); ?>
@@ -58,7 +67,6 @@ get_header(); ?>
                                 <span><?php echo $final_price; ?></span>
                             </div>
                         </div>
-                        <!--<p><a class="btn btn-lg btn-danger" href="<?php echo $course_url; ?>" role="button"><?php echo $button_text; ?></a></p>-->
                         <p><a class="btn btn-lg btn-danger" href="<?php echo $course_url; ?>" target = "_blank" role="button"><?php echo $button_text; ?></a></p>
                     </div>
                 </div>
@@ -115,81 +123,25 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- Who benefits 
+    <!-- Who should take this course section 
         =============================================-->
     <section id="who-benefits">
         <div class="container">
             <div class="section-header">
-                <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-pad.png" alt="Pad and pencil">
-                <h2>Who Should Take This Course?</h2>
+                <!--if user uploaded an image-->
+            <?php  if( !empty($income_feature_image) ) :   ?>
+                <img src="<?php echo $who_feature_image['url']; ?>" alt="<?php $income_feature_image['alt']; ?>">
+            <?php endif; ?>
+
+                <h2><?php echo $who_section_title; ?></h2>
                 <div class="row">
                     <!--offsets 2 columns in the left-->
                     <div class="col-sm-8 col-sm-offset-2">
-                        <h3>Graphics &amp; Web Designers</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page
-                            when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                            distribution of letters, as opposed to using 'Content here, content here', making it look like
-                            readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                            their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
-                            their infancy.</p>
-                        <p>
-                            Where does it come from? Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
-                            Latin literature from 45 BC, <strong>making it over 2000 years old. </strong></p>
-
-                        <h3>Enterpreneurs</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page
-                            when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                            distribution of letters, as opposed to using 'Content here, content here', making it look like
-                            readable English.</p>
-                        <p>
-                            Where does it come from? Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
-                            Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor
-                            at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur,
-                            from a Lorem Ipsum passage, and going through the cites of the word in classical literature,
-                            discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de
-                            Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This
-                            book is a treatise on the theory of ethics, very popular during the Renaissance. The first line
-                            of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-
-                        <h3>Employees</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page
-                            when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                            distribution of letters, as opposed to using 'Content here, content here', making it look like
-                            readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                            their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
-                            their infancy.</p>
-                        <p>
-                            Where does it come from? Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
-                            Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor
-                            at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur,
-                            from a Lorem Ipsum passage, and going through the cites of the word in classical literature,
-                            discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de
-                            Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This
-                            book is a treatise on the theory of ethics, very popular during the Renaissance. The first line
-                            of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-
-                        <h3>Code Hobbyist</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page
-                            when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                            distribution of letters, as opposed to using 'Content here, content here', making it look like
-                            readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                            their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
-                            their infancy. Various versions have evolved over the years, sometimes by accident, sometimes
-                            on purpose (injected humour and the like)</p>
-                        <p>
-                            Where does it come from? Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
-                            Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor
-                            at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur,
-                            from a Lorem Ipsum passage, and going through the cites of the word in classical literature,
-                            discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de
-                            Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This
-                            book is a treatise on the theory of ethics, very popular during the Renaissance. The first line
-                            of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+                        <?php echo $who_section_body; ?>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
 
 
