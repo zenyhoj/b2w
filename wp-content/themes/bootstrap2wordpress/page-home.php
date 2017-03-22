@@ -33,7 +33,12 @@ $who_section_body    =   get_field('who_section_body');
 //Course Features Section
 $features_section_image = get_field('features_section_image');
 $features_section_title = get_field('features_section_title');
-$features_section_body = get_field('features_section_body');
+$features_section_body  = get_field('features_section_body');
+
+//Project Features Section 
+$project_feature_title  = get_field('project_feature_title');
+$project_feature_body   = get_field('project_feature_body');
+
 
 
 
@@ -191,41 +196,25 @@ get_header(); ?>
     <section id="project-features">
         <div class="container">
             <div class="section-header">
-                <h2>Project Features</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, <strong>consectetur adipisicing elit</strong>. Accusamus impedit autem, nulla
-                    quibusdam harum, fugit voluptate veniam distinctio commodi minima ullam possimus rerum, <em>laborum dolores deserunt</em>,
-                    aut exercitationem aspernatur magni.</p>
+                <h2><?php echo $project_feature_title; ?></h2>
+                <p class="lead"><?php echo $project_feature_body; ?></p>
             </div>
             <div class="row">
+
+                <?php $loop = new WP_Query(array('post_type' => 'project_feature', 'orderby' => 'post_id', 'order' => 'ASC')); ?>
+                <?php while($loop->have_posts()) : $loop->the_post(); ?>
                 <div class="col-sm-4">
-                    <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-design.png" alt="Design">
-                    <h3>Sexy &amp; Modern Design</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio minus alias, impedit quia excepturi
-                        a qui incidunt tempore reprehenderit neque perspiciatis veritatis consectetur sunt at ut, nam hic
-                        porro enim.</p>
+                
+                <?php if(has_post_thumbnail() ) {
+                the_post_thumbnail(); 
+                } ?>
 
-                </div>
+                <!--using native wordpress function to fetch the title and content-->
+                <h3><?php the_title(); ?></h3>
+                <p><?php the_content(); ?></p>
+            </div>
 
-                <div class="col-sm-4">
-                    <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-code.png" alt="Code">
-                    <h3>Quality HTML5 &amp; CSS3</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio minus alias, impedit quia excepturi
-                        a qui incidunt tempore reprehenderit neque perspiciatis veritatis consectetur sunt at ut, nam hic
-                        porro enim.</p>
-
-                </div>
-
-                <div class="col-sm-4">
-                    <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-design.png" alt="Design">
-                    <h3>Easy to use CMS</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio minus alias, impedit quia excepturi
-                        a qui incidunt tempore reprehenderit neque perspiciatis veritatis consectetur sunt at ut, nam hic
-                        porro enim.</p>
-
-                </div>
-
-
-
+            <?php endwhile; ?>
             </div>
             <!--row-->
 
@@ -245,7 +234,6 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-
     </section>
 
     <!-- Instructor  
