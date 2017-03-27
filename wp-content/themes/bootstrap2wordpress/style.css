@@ -378,7 +378,7 @@ body{
     /*background: url('/wp-content/themes/bootstrap2wordpress/assets/img/tile.jpg') top left repeat;*/
     background: url('../bootstrap2wordpress/assets/img/tile.jpg') top left repeat;
   }
-
+/*when logged-in in wp dashboard*/
 .logged-in .navbar-fixed-top {
     top: 32px;
 }

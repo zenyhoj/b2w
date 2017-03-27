@@ -27,7 +27,7 @@ $reason_2_desc          =   get_field('reason_2_description');
             <?php endif; ?>
             <h2><?php echo $income_section_title;?></h2>
             </div> <!--section-header-->
-            <p class="lead" ><?php echo $income_section_desc; ?></p>
+            <p class="lead text-center" ><?php echo $income_section_desc; ?></p>
             <div class="row">
                 <div class="col-sm-6">
                     <h3><?php echo $reason_1_title; ?></h3>

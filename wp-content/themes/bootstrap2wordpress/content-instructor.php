@@ -31,11 +31,11 @@ $num_courses           = get_field('num_courses');
                             <?php endif; ?>
 
                              <?php if(!empty($facebook_username)) : ?>
-                            <a href="https://facebook.com/<?php $facebook_username; ?>" target="_blank" class="badge social twitter"><i class="fa fa-facebook"></i></a>
+                            <a href="https://facebook.com/<?php $facebook_username; ?>" target="_blank" class="badge social facebook"><i class="fa fa-facebook"></i></a>
                             <?php endif; ?>
 
                              <?php if(!empty($google_plus_username)) : ?>
-                            <a href="https://plus.google.com/<?php $google_plus_username; ?>" target="_blank" class="badge social twitter"><i class="fa fa-google-plus"></i></a>
+                            <a href="https://plus.google.com/<?php $google_plus_username; ?>" target="_blank" class="badge social gplus"><i class="fa fa-google-plus"></i></a>
                             <?php endif; ?>
                             
                         </div>
