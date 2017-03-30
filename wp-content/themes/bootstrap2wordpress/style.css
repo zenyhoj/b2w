@@ -914,6 +914,7 @@ footer li.signup-link a:hover {
     padding: 20px;
 }
 
+
 .post header h1,
 .post header h3 {
     margin: 0 0 15px;
@@ -925,7 +926,7 @@ footer li.signup-link a:hover {
     font-size: 24px;
 }
 
-.post-image {
+.post-image img {
     height: auto;
 }
 
