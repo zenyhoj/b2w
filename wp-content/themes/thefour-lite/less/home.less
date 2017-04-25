@@ -1,0 +1,73 @@
+/**
+ * Home page
+ *
+ * -----------------------------------------------------------------------------
+ */
+.section {
+	margin-bottom: 110px;
+
+	h2 {
+		margin: 0 0 1em;
+		text-align: center;
+		.font-scale(4);
+		letter-spacing: -.04em;
+	}
+
+	/* Intro section */
+	.features {
+		text-align: center;
+		.font-scale(1);
+	}
+
+	/* Portfolio section */
+	&.portfolio {
+		h2 {
+			margin-bottom: .5em;
+		}
+	}
+
+	/* Call to action */
+	&.call-to-action {
+		text-align: center;
+		.font-scale(1);
+
+		p {
+			margin: 0;
+		}
+
+		.button,
+		.button-minimal {
+			margin-top: 2em;
+			.font-scale(-2);
+		}
+	}
+
+	/* Blog section */
+	&.blog {
+		article {
+			box-shadow: none;
+			background: none;
+			margin-bottom: 0;
+		}
+
+		.entry-header {
+			padding-bottom: 3%;
+		}
+
+		.entry-text {
+			padding: 0;
+			margin-bottom: -0.4em;
+		}
+		.entry-media + .entry-text {
+			padding-top: 8%;
+		}
+	}
+
+	/* Image section */
+	&.image {
+		text-align: center;
+	}
+}
+.main .section:last-child {
+	margin-bottom: 0;
+}

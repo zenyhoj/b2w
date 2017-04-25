@@ -25,7 +25,8 @@
 <link rel="stylesheet" type="text/css" media="all" href='<?php bloginfo( 'style.css' ); ?>'>
     <!--Google fonts -->
 
-<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" type="text/css">
+<!-- <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" type="text/css"> -->
+<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
     <!--<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">-->
 
 
@@ -47,7 +48,7 @@
 	<!--CONVERTING STATIC HEADER TO DYNAMIC-->
 
  <header class="site-header" role="banner">
-        <!-- NAVBAR 
+        <!-- NAVBAR
         =============================================-->
         <div class="navbar-wrapper">
             <nav class="navbar navbar-inverse navbar-fixed-top navbar-white " role="navigation">
@@ -63,25 +64,33 @@
                     </div>
                     <!--navbar-header-->
 
-					<!--creating the dynamic header using wp_nav_menu-->
-					<?php
-						wp_nav_menu( array(
+	          <!--creating the dynamic header using wp_nav_menu-->
+		  <?php
+					/*	wp_nav_menu( array(
 							'theme_location'	=> 'primary',
 							'container'			=>	'nav',
 							'container_class'	=>	'navbar-collapse collapse',
-							'menu_class'		=>	'nav navbar-nav navbar-right'
-						));
-					
-					?>
-                   
+							'menu_class'		=>	'nav navbar-nav navbar-right'*/
+
+
+							//bootstrap-nav-walker code
+		wp_nav_menu( array(
+                'menu'              => 'primary',
+                'theme_location'    => 'primary',
+                'depth'             => 2,
+                'container'         => 'div',
+                'container_class'   => 'collapse navbar-collapse',
+                // 'container_id'      => 'bs-example-navbar-collapse-1',
+                'menu_class'        => 'nav navbar-nav navbar-right',
+                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                'walker'            => new WP_Bootstrap_Navwalker())
+
+	       );
+		?>
                 </div>
                 <!--container-->
             </nav>
             <!--navbar-->
-
         </div>
         <!--navbar-wrapper-->
     </header>
-
-
-	

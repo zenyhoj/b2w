@@ -372,8 +372,9 @@ Blue gray: #3e4249
 
 
 body{
-    margin-top: 50px; 
-    font-family: 'Raleway', Helvetica, sans-serif;
+    margin-top: 50px;
+    /*font-family: 'Raleway', Helvetica, sans-serif;*/
+		font-family: 'Merriweather Sans', sans-serif;
     font-size: 16px;
     /*background: url('/wp-content/themes/bootstrap2wordpress/assets/img/tile.jpg') top left repeat;*/
     background: url('../bootstrap2wordpress/assets/img/tile.jpg') top left repeat;
@@ -432,7 +433,7 @@ a:hover {
 button, input, .btn, a.btn{
     color: white;
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility; 
+    text-rendering: optimizeLegibility;
 }
 .btn{
     font-weight: bold;
@@ -521,7 +522,7 @@ blockquote:before { /*to fix default left margin for first word*/
     padding: 40px 0;
     color: white;
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility; 
+    text-rendering: optimizeLegibility;
 }
 #hero article{
     width: 100%;
@@ -540,7 +541,7 @@ text-align: center;
 
 #price-timeline .price{
     display: inline-block;
-    margin: 0 2% 0 0; 
+    margin: 0 2% 0 0;
     width: 30%;
     background: #3e4249;
     padding: 10px 20px 30px;
@@ -568,13 +569,13 @@ text-align: center;
     bottom: -35px;
     left: 50%;
     margin-left: -35px;
-    
+
 
 }
 
 #price-timeline h4{
     margin: 0 0 10px;
-    
+
 }
 
 #price-timeline h4 small{
@@ -582,8 +583,8 @@ text-align: center;
     font-weight: bold;
     display: block;
     padding-top: 5px;
-    
-} 
+
+}
 
 
 
@@ -623,7 +624,7 @@ section.main-content {
 #primary {
     padding: 40px 0 40px;
     margin-bottom: 0;
-    
+
 }
 
 .feature-image {
@@ -634,7 +635,7 @@ section.main-content {
 
 .feature-image-default {
     background: url('../bootstrap2wordpress/assets/img/stuff-feature.jpg') no-repeat;
-    
+
     background-size: cover;
 }
 
@@ -655,7 +656,7 @@ section.main-content {
     color: white;
     padding: 20px 0;
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility; 
+    text-rendering: optimizeLegibility;
     font-size: 1.2em;
 }
 
@@ -717,7 +718,7 @@ section.main-content {
     -moz-border-radius: 100%;
     border-radius: 100%;
      -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility; 
+    text-rendering: optimizeLegibility;
 }
 
 /*Vertically align content within an element*/
@@ -778,7 +779,7 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 /*input[type="submit"],*/
-input[type="search"], 
+input[type="search"],
 textarea {
 
 color: #666;
@@ -821,7 +822,7 @@ button[type="submit"] {
     -o-webkit-border-radius: 6px;
     border-radius: 6px;
     background: #aaa;
-   
+
 }
 
 input[type="submit"]:hover,
@@ -830,14 +831,14 @@ button[type="submit"]:hover {
     border: none;
     background: gray;
 }
- 
+
 /*=========== END OF FORMS ==========*/
 
 
 /*==========Signup Section===========*/
 #signup {
 
-    background: url('../bootstrap2wordpress/assets/img/hipster-stuff.jpg') center center repeat fixed; 
+    background: url('https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/HNQF94HP9D.jpg') center center repeat fixed;
     background-size: cover;
     text-align: center;
     color: white;
@@ -881,7 +882,7 @@ footer a:link, footer a:visited {
 footer a:hover {
 
     color: #dd5638;
-    
+
 }
 
 footer li.signup-link a {

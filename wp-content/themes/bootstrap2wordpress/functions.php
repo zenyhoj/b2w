@@ -118,6 +118,15 @@ function bootstrap2wordpress_scripts() {
 add_action( 'wp_enqueue_scripts', 'bootstrap2wordpress_scripts' );
 
 
+function wpb_theme_setup(){
+	//Nav Menus
+	register_nav_menus(array(
+		'primary' => __('Primary Menu'),
+	));
+}
+add_action('after_setup_theme', 'wpb_theme_setup');
+
+
 
 
 /**
@@ -145,5 +154,4 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-
-
+require_once('wp-bootstrap-navwalker.php');

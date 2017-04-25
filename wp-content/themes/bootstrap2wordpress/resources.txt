@@ -1,0 +1,16 @@
+
+//registering drop down nav menu
+https://github.com/wp-bootstrap/wp-bootstrap-navwalker
+https://www.youtube.com/watch?v=t-AGjdMrtdA
+
+1. in theme-location/functions.php, add_theme_support
+
+function wpb_theme_setup(){
+	//Nav Menus
+	register_nav_menus(array(
+		'primary' => __('Primary Menu'),
+	));
+}
+add_action('after_setup_theme', 'wpb_theme_setup');
+
+2. in header.php, add
